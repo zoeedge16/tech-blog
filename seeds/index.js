@@ -5,6 +5,6 @@ const seed = async () => {
 
 
     process.exit(0);
-};
+}
 
 seed();

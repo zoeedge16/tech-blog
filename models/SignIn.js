@@ -11,7 +11,15 @@ SignIn.init(
             autoIncrement: true,
             allowNull: false,
         },
-        name: DataTypes.STRING,
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+          },
+          password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          },
     },
     {
         sequelize,

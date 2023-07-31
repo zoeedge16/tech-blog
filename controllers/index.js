@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../models');
+const { Post, Comment, SignIn } = require('../models');
 
 router.get('/', async (req,res) => {
     const postData = await Post.findAll({
@@ -10,5 +10,12 @@ router.get('/', async (req,res) => {
 
     res.render('index', { posts });
 });
+
+router.get('/signIn', async (req, res) => {
+    const signInData = await SignIn.findAll();
+    const signIn = signInData.map(signIn => signIn.get({ plain: true }));
+    res.render('signIn', { signIn });
+});
+
 
 module.exports = router;

@@ -1,15 +1,16 @@
 const sequilize = require('../config/connection');
-const { Post, Comment } = require('../models')
+const { Post, Comment, SignIn } = require('../models')
 
 const seed = async () => {
     await sequilize.sync({ force: true });
-   const posts = await Post.bulkCreate(post());
+    const posts = await Post.bulkCreate(post());
+    await SignIn.bulkCreate(signIn());
    
-   for (const post of posts) {
-     const post_id = post.id;
+    for (const post of posts) {
+        const post_id = post.id;
 
-     await Comment.bulkCreate(comments(post_id))
-   };
+        await Comment.bulkCreate(comments(post_id))
+    };
 
     process.exit(0);
 }
@@ -42,6 +43,13 @@ const comments = (post_id) => [
         creator: 'zoeedge17',
         dateCreated: new Date(),
         post_id: 2,
+    }
+]
+
+const signIn = () => [
+    {
+        name: 'zoeedge20',
+        password: 'passowrd123'
     }
 ]
 

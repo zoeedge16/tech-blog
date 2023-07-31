@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequilize');
-const sequilize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class SignUp extends Model {};
 
@@ -14,7 +14,7 @@ SignUp.init(
         name: DataTypes.STRING,
     },
     {
-        sequilize,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         modelName: 'sign-up',

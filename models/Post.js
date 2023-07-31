@@ -11,7 +11,15 @@ Post.init(
             autoIncrement: true,
             allowNull: false,
         },
-        name: DataTypes.STRING,
+        title: {
+
+        },
+        contents: {
+
+        },
+        dateCreated: {
+            
+        }
     },
     {
         sequilize,

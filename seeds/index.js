@@ -7,4 +7,14 @@ const seed = async () => {
     process.exit(0);
 }
 
+const posts = () => [
+    {
+        title: '',
+        contents: '',
+        creator: '',
+        dateCreated: '',
+    }
+
+]
+
 seed();

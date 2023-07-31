@@ -18,13 +18,13 @@ const seed = async () => {
 const post = () => [
     {
         title: 'Fun Post',
-        contents: 'This is a fun post',
+        content: 'This is a fun post',
         creator: 'zoeedge16',
         dateCreated: new Date()
     },
     {
         title: 'Cool Post',
-        contents: 'This is a coool post',
+        content: 'This is a coool post',
         creator: 'zoeedge16',
         dateCreated: new Date()
     }
@@ -48,7 +48,7 @@ const comments = (post_id) => [
 
 const signIn = () => [
     {
-        name: 'zoeedge20',
+        username: 'zoeedge20',
         password: 'passowrd123'
     }
 ]

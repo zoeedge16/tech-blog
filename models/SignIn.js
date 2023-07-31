@@ -25,7 +25,7 @@ SignIn.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        modelName: 'sign-in',
+        modelName: 'signin',
     }
 )
 

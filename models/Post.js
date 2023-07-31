@@ -12,13 +12,17 @@ Post.init(
             allowNull: false,
         },
         title: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         contents: {
-
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         dateCreated: {
-            
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+            allowNull: false
         }
     },
     {

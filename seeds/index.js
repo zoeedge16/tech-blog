@@ -6,9 +6,9 @@ const seed = async () => {
    const posts = await Post.bulkCreate(post());
    
    for (const post of posts) {
-     const postId = post.id;
+     const post_id = post.id;
 
-     await Comment.bulkCreate(comments(postId))
+     await Comment.bulkCreate(comments(post_id))
    };
 
     process.exit(0);
@@ -20,22 +20,28 @@ const post = () => [
         contents: 'This is a fun post',
         creator: 'zoeedge16',
         dateCreated: new Date()
+    },
+    {
+        title: 'Cool Post',
+        contents: 'This is a coool post',
+        creator: 'zoeedge16',
+        dateCreated: new Date()
     }
 
 ]
 
-const comments = (postId) => [
+const comments = (post_id) => [
     {
         text: 'Cool fun post!',
         creator: 'zoeedge17',
         dateCreated: new Date(),
-        postId: postId,
+        post_id: 1,
     },
     {
         text: 'Awesome!',
         creator: 'zoeedge17',
         dateCreated: new Date(),
-        postId: postId,
+        post_id: 2,
     }
 ]
 

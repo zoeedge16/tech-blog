@@ -6,11 +6,11 @@ const SignUp = require('./SignUp');
 
 
 Post.hasMany(Comment, {
-    foreignKey: 'comment_id'
+    foreignKey: 'post_id'
 });
 
 Comment.belongsTo(Post, {
-    foreignKey: 'comment_id'
+    foreignKey: 'post_id'
 });
 // unsure of how SignUp and SignIn work in this context above
 

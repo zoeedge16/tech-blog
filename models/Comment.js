@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Post = require('./Post');
 
 class Comment extends Model {};
 
@@ -11,7 +12,29 @@ Comment.init(
             autoIncrement: true,
             allowNull: false,
         },
-        name: DataTypes.STRING,
+        text: {
+           type: DataTypes.TEXT,
+           allowNull: false,
+        },
+        creator: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        dateCreated: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
+        postId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: Post,
+                key: 'id'
+            }
+
+        }
+
     },
     {
         sequelize,

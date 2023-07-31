@@ -2,11 +2,13 @@ const router = require('express').Router();
 const { Post, Comment } = require('../models');
 
 router.get('/', async (req,res) => {
-    const postTitle = await Post.findAll({
+    const postData = await Post.findAll({
         include: [Comment]
     });
 
-    res.json(postTitle);
-})
+    const posts = postData.map(post => post.get({ plain: true }));
+
+    res.render('index', { posts });
+});
 
 module.exports = router;
